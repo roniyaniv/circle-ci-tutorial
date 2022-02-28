@@ -12,6 +12,13 @@ jobs:
           root: .
           paths:
             - .
+      # Another example:
+      # - run: echo "hello world" > ~/output.txt
+      # - persist_to_workspace:
+      #     root: ~/
+      #     paths:
+      #       - output.txt
+
   print_output_file:
     docker: 
       - image: circleci/node:13.8.0
@@ -19,6 +26,11 @@ jobs:
       - attach_workspace:
           at: .
       - run: cat output.txt
+    # continuing previous example:
+    # steps:
+    #   - attach_workspace:
+    #       at: ~/
+    #   - run: cat ~/output.txt
 
 
 # Orchestrate or schedule a set of jobs
@@ -29,4 +41,4 @@ workflows:
       - save_hello_world_output
       - print_output_file:
           requires: 
-          - save_hello_world_output
+            - save_hello_world_output
