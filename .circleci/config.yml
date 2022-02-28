@@ -6,7 +6,7 @@ commands:
       Prints the Circle CI Workflow ID from its environment variable named $CIRCLE_WORKFLOW_ID to the console
     steps:
       - run: >
-          echo "Workflow ID: " + $CIRCLE_WORKFLOW_ID
+          echo "Workflow ID: " $CIRCLE_WORKFLOW_ID
  
 jobs:
   save_hello_world_output:
