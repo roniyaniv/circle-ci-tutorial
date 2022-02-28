@@ -58,3 +58,4 @@ workflows:
       - print_output_file:
           requires: 
             - save_hello_world_output
+      - this_job_should_fail
