@@ -8,9 +8,9 @@ jobs:
     steps:
       - run: echo "this is my output text" > output.txt
       - persist_to_workspace:
-          root: /tmp/circleci
+          root: /tmp
           paths:
-            - .
+            - circleci
   print_output_file:
     docker: 
       - image: circleci/node:13.8.0
